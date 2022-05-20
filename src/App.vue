@@ -3,11 +3,13 @@ import HeaderComponent from "@/components/HeaderComponent.vue";
 </script>
 
 <template>
-  <header>
-    <header-component />
-  </header>
-  <div class="max-w-7xl mx-auto overflow-x-hidden bg-slate-100">
-    <RouterView />
+  <div class="space-y-20">
+    <header>
+      <header-component />
+    </header>
+    <div class="max-w-7xl mx-auto overflow-x-hidden bg-slate-100">
+      <RouterView />
+    </div>
   </div>
 </template>
 
