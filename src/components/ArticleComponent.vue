@@ -1,12 +1,14 @@
 <template>
-  <div class="flex flex-col w-full text-center">
-    <h1 class="text-2xl truncate mb-6">{{ feedGame.title[0] }}</h1>
+  <div class="flex flex-col w-full">
+    <h1 class="text-2xl truncate mb-6 text-center">{{ feedGame.title[0] }}</h1>
     <div class="flex flex-col justify-center items-center">
-      <img v-lazy="feedGameImg" class="w-full h-full max-w-lg" :alt="feedGame.title[0]" rel="preload">
-      <p class="text-gray-600 line-clamp-3">
-        {{ RssParsify.parseHTML(feedGame.description[0]) }}
-      </p>
-      <span class="text-blue-500 self-start"
+      <img
+        v-lazy="feedGameImg"
+        class="w-full h-full max-w-lg"
+        :alt="feedGame.title[0]"
+        rel="preload"
+      />
+      <span class="text-slate-700 font-extralight self-start"
         >fonte:
         {{
           /^(?:https?:\/\/)?(?:[^@\/\n]+@)?(?:www\.)?([^:\/?\n]+)/gim
@@ -14,10 +16,13 @@
             .replace(/.*www./, "")
         }}</span
       >
+      <p class="text-gray-600 line-clamp-3">
+        {{ RssParsify.parseHTML(feedGame.description[0]) }}
+      </p>
     </div>
 
     <button
-      class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded max-w-xl w-full self-center"
+      class="bg-blue-900 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded max-w-xl w-full self-center"
       @click="openInNewTab(feedGame.link)"
     >
       Leggi di più
@@ -34,13 +39,12 @@ const props = defineProps({
     default: () => {},
   },
 });
-const {feedGame} = toRefs(props);
-const feedGameImg = feedGame.value['post-thumbnail'][0].url[0]
+const { feedGame } = toRefs(props);
+const feedGameImg = feedGame.value["post-thumbnail"][0].url[0];
 const openInNewTab = (url) => {
   var win = window.open(url, "_blank");
   win.focus();
 };
 </script>
 
-<style>
-</style>
+<style></style>
