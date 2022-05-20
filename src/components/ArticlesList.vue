@@ -12,9 +12,10 @@
 import Article from "@/components/ArticleComponent.vue";
 import RssParsify from '@saintbull/vue-rss-parsify';
 
-const feedGames = await RssParsify.parseToJSON(
+var feedGames = await RssParsify.parseToJSON(
   'https://www.gamesource.it/feed/'
 );
+
 console.log(feedGames);
 </script>
 
