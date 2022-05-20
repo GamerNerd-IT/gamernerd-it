@@ -9,13 +9,15 @@
   },
   "dependencies": {
     "@saintbull/vue-rss-parsify": "^0.2.2",
+    "@tailwindcss/line-clamp": "^0.4.0",
     "buffer": "^6.0.3",
     "core-js": "^3.8.3",
     "graceful-fs": "^4.2.10",
     "stream-browserify": "^3.0.0",
     "url": "^0.11.0",
     "vue": "^3.2.13",
-    "vue-router": "^4.0.3"
+    "vue-router": "^4.0.3",
+    "vue3-lazyload": "^0.3.0"
   },
   "devDependencies": {
     "@babel/core": "^7.12.16",
