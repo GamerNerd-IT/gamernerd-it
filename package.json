@@ -8,7 +8,7 @@
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
-    "@saintbull/vue-rss-parsify": "^0.2.2",
+    "@saintbull/vue-rss-parsify": "^0.2.4",
     "@tailwindcss/line-clamp": "^0.4.0",
     "buffer": "^6.0.3",
     "core-js": "^3.8.3",
