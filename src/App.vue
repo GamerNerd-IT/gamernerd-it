@@ -1,5 +1,6 @@
 <script setup>
 import HeaderComponent from "@/components/HeaderComponent.vue";
+import FooterComponent from "@/components/FooterComponent.vue";
 </script>
 
 <template>
@@ -10,6 +11,9 @@ import HeaderComponent from "@/components/HeaderComponent.vue";
     <div class="max-w-7xl mx-auto overflow-x-hidden bg-slate-100">
       <RouterView />
     </div>
+    <footer>
+      <footer-component />
+    </footer>
   </div>
 </template>
 
