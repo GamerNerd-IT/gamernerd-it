@@ -1,9 +1,11 @@
 <template>
-  <div class="flex w-full h-20 text-white bg-blue-700 items-center justify-center">
-    <h1 class="text-4xl">Gamernerd.it</h1>
+  <div class="flex w-full h-20 text-white bg-blue-700 bg-opacity-95 shadow-md items-center justify-center fixed top-0">
+    <img v-lazy="logo" alt="logo" class="w-full max-w-sm" rel="preload" />
   </div>
 </template>
 
-<script></script>
+<script setup>
+  import logo from '@/assets/logo.webp';
+</script>
 
 <style></style>
