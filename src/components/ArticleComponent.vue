@@ -2,8 +2,8 @@
   <div class="flex flex-col w-full text-center">
     <h1 class="text-2xl truncate mb-6">{{ feedGame.title[0] }}</h1>
     <div class="flex flex-col justify-center items-center">
-      <img :src="feedGameImg" class="max-w-lg">
-      <p class="text-gray-600">
+      <img v-lazy="feedGameImg" class="w-full h-full max-w-lg" :alt="feedGame.title[0]" rel="preload">
+      <p class="text-gray-600 line-clamp-3">
         {{ RssParsify.parseHTML(feedGame.description[0]) }}
       </p>
       <span class="text-blue-500 self-start"
@@ -42,4 +42,5 @@ const openInNewTab = (url) => {
 };
 </script>
 
-<style></style>
+<style>
+</style>
