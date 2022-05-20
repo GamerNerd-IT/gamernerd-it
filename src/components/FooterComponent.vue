@@ -5,7 +5,7 @@
         <h1>GAMERNERD.IT</h1>
       </div>
       <div class="flex justify-start flex-col text-sm">
-        <span>Powered by <a class="hover:text-slate-200 cursor-pointer">Vue</a></span>
+        <span>Powered by <a class="hover:text-slate-200 cursor-pointer" href="https://vuejs.org/" target="_blank">vuejs.org</a></span>
         <span>&copy; 2022 Matteo Santoro</span>
       </div>
     </div>

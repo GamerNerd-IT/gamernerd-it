@@ -7,6 +7,8 @@
         class="w-full h-full max-w-lg"
         :alt="feedGame.title[0]"
         rel="preload"
+        width="400"
+        height="400"
       />
       <span class="text-slate-700 font-extralight self-start"
         >fonte:
