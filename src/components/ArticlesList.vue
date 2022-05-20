@@ -15,8 +15,6 @@ import RssParsify from '@saintbull/vue-rss-parsify';
 var feedGames = await RssParsify.parseToJSON(
   'https://www.gamesource.it/feed/'
 );
-
-console.log(feedGames);
 </script>
 
 <style></style>

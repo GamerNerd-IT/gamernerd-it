@@ -6,7 +6,7 @@ import HeaderComponent from "@/components/HeaderComponent.vue";
   <header>
     <header-component />
   </header>
-  <div class="max-w-7xl mx-auto bg-slate-100">
+  <div class="max-w-7xl mx-auto overflow-x-hidden bg-slate-100">
     <RouterView />
   </div>
 </template>
