@@ -13,7 +13,7 @@ import Article from "@/components/ArticleComponent.vue";
 import RssParsify from '@saintbull/vue-rss-parsify';
 
 var feedGames = await RssParsify.parseToJSON(
-  'https://www.gamesource.it/feed/'
+  'https://www.eurogamer.it/feed'
 );
 </script>
 
