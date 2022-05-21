@@ -42,7 +42,8 @@ const props = defineProps({
   },
 });
 const { feedGame } = toRefs(props);
-const feedGameImg = feedGame.value["post-thumbnail"][0].url[0];
+const feedGameImg = feedGame.value['media:content'][0].$.url
+console.log(feedGameImg);
 const openInNewTab = (url) => {
   var win = window.open(url, "_blank");
   win.focus();
