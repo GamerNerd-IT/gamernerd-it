@@ -24,7 +24,7 @@
     </div>
 
     <button
-      class="bg-blue-900 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded max-w-xl w-full self-center"
+      class="bg-blue-900 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded max-w-xl w-full self-center mb-16"
       @click="openInNewTab(feedGame.link)"
     >
       Leggi di più
@@ -43,7 +43,6 @@ const props = defineProps({
 });
 const { feedGame } = toRefs(props);
 const feedGameImg = feedGame.value['media:content'][0].$.url
-console.log(feedGameImg);
 const openInNewTab = (url) => {
   var win = window.open(url, "_blank");
   win.focus();

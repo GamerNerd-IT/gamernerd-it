@@ -1,6 +1,22 @@
 <script setup>
 import HeaderComponent from "@/components/HeaderComponent.vue";
 import FooterComponent from "@/components/FooterComponent.vue";
+import {useFeedStore} from "@/store/feed";
+const websiteSources = [
+  {
+    label: "eurogamer.it",
+    url: "https://eurogamer.it/feed",
+    active: true,
+  },
+  {
+    label: "everyeye.it",
+    url: "https://www.everyeye.it/feed/feed_news_rss.asp",
+    active: false,
+  },
+];
+const feed = useFeedStore();
+feed.addBulkFeed(websiteSources);
+
 </script>
 
 <template>
@@ -8,8 +24,10 @@ import FooterComponent from "@/components/FooterComponent.vue";
     <header>
       <header-component />
     </header>
-    <div class="max-w-7xl mx-auto overflow-x-hidden bg-slate-100">
-      <RouterView />
+    <div class="bg-slate-100">
+      <div class="max-w-7xl mx-auto overflow-x-hidden">
+        <RouterView />
+      </div>
     </div>
     <footer>
       <footer-component />
