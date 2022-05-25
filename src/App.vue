@@ -13,6 +13,16 @@ const websiteSources = [
     url: "https://www.everyeye.it/feed/feed_news_rss.asp",
     active: false,
   },
+  {
+    label: "ign.com",
+    url: "https://it.ign.com/feed.xml",
+    active: false,
+  },
+  {
+    label: "gamepare.it",
+    url: "https://gamepare.it/feed/",
+    active: false,
+  }
 ];
 const feed = useFeedStore();
 feed.addBulkFeed(websiteSources);
