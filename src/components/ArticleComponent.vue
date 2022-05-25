@@ -1,4 +1,7 @@
 <template>
+  <div v-if="index % 3 === 0" class="flex flex-col w-full">
+    <ads-component :index="index / 3"/>
+  </div>
   <div class="flex flex-col w-full">
     <h1 class="text-2xl truncate mb-6 text-center">{{ articleJson.title }}</h1>
     <div class="flex flex-col justify-center items-center">
@@ -12,11 +15,8 @@
       />
       <span class="text-slate-700 font-extralight self-start"
         >fonte:
-        {{
-          /^(?:https?:\/\/)?(?:[^@\/\n]+@)?(?:www\.)?([^:\/?\n]+)/gim
-            .exec(articleJson.link)[0]
-            .replace(/.*www./, "")
-        }}</span
+        {{ articleJson.source }}
+        <br/> {{articleJson.pubDate}}</span
       >
       <p class="text-gray-600 line-clamp-3">
         {{ articleJson.description }}
@@ -34,19 +34,32 @@
 
 <script setup>
 import { defineProps, toRefs } from "vue";
+import AdsComponent from "@/components/AdsComponent.vue";
 import RssParsify from "@saintbull/vue-rss-parsify";
 const props = defineProps({
   feedGame: {
     type: Object,
     default: () => {},
   },
+  index: {
+    type: Number,
+    default: () => {},
+  },
 });
-const { feedGame } = toRefs(props);
+const { feedGame, index } = toRefs(props);
 const articleJson = {
   title: feedGame.value.title[0],
   link: feedGame.value.link,
+  source: new URL(feedGame.value.link).hostname,
   description: RssParsify.parseHTML(feedGame.value.description[0]),
   image: feedGame.value['media:content'] ? feedGame.value['media:content'][0].$.url : feedGame.value.description[0].match(/<img[^>]+src="([^">]+)"/)[1],
+  pubDate: new Date(feedGame.value.pubDate[0]).toLocaleDateString("it-IT", {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+    hour: "numeric",
+    minute: "numeric",
+  }),
 }
 const openInNewTab = (url) => {
   var win = window.open(url, "_blank");

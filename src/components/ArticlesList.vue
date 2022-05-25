@@ -4,8 +4,9 @@
       <websites-list :websiteSources="feeds" :open="status" />
     </div>
     <Article
-      v-for="feedGame in rss"
+      v-for="(feedGame, index) in rss"
       :feedGame="feedGame"
+      :index="index"
       v-bind:key="feedGame.guid"
     />
   </div>
