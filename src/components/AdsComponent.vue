@@ -1,6 +1,7 @@
 <template>
-    <div v-html="adsStore.ads[0].iframe">
-  </div>
+    <div class="flex justify-center">
+      <iframe title="amazon-ads" :src="adsStore.ads[0].iframe" frameborder="0" scrolling="no" style="width:120px;height:240px" rel="preload" loading="lazy"></iframe>
+    </div>
 </template>
 
 <script setup>
