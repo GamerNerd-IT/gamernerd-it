@@ -15,8 +15,8 @@ export const websiteSources = [
     active: true,
   },
   {
-    label: "gamepare.it",
-    url: "https://gamepare.it/feed/",
-    active: false,
+    label: "gamingtoday.it",
+    url: "https://gamingtoday.it/category/news/feed/",
+    active: true,
   }
 ];
