@@ -14,6 +14,7 @@ export const useFeedStore = defineStore({
       state._rss.sort((a, b) => {
         return new Date(b.pubDate) - new Date(a.pubDate);
       });
+      state._rss = state._rss.slice(0, 100);
       return state._rss;
     },
   },
