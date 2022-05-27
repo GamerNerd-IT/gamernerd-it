@@ -47,12 +47,23 @@ const props = defineProps({
   },
 });
 const { feedGame, index } = toRefs(props);
+const findImage = () => {
+  if(feedGame.value['media:content']){
+    return feedGame.value['media:content'][0]['$'].url;
+  }
+  if(feedGame.value.description[0].match(/<img[^>]+src="([^">]+)"/)){
+    return feedGame.value.description[0].match(/<img[^>]+src="([^">]+)"/)[1];
+  }
+/*   if(feedGame.value.enclosure[0].$['url']){
+    return feedGame.value.enclosure[0].$['url'];
+  } */
+};
 const articleJson = {
   title: feedGame.value.title[0],
   link: feedGame.value.link,
   source: new URL(feedGame.value.link).hostname,
   description: RssParsify.parseHTML(feedGame.value.description[0]),
-  image: feedGame.value['media:content'] ? feedGame.value['media:content'][0].$.url : feedGame.value.description[0].match(/<img[^>]+src="([^">]+)"/)[1],
+  image: findImage(),
   pubDate: new Date(feedGame.value.pubDate[0]).toLocaleDateString("it-IT", {
     year: "numeric",
     month: "long",
