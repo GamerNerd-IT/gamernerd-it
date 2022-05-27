@@ -3,7 +3,7 @@
     <ads-component :index="index / 3"/>
   </div>
   <div class="flex flex-col w-full">
-    <h1 class="text-2xl truncate mb-6 text-center">{{ articleJson.title }}</h1>
+    <h2 class="text-2xl truncate mb-6 text-center">{{ articleJson.title }}</h2>
     <div class="flex flex-col justify-center items-center">
       <img
         v-lazy="articleJson.image"
